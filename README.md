@@ -1,5 +1,6 @@
 # Lighthouse GraphQL SQL Log(s).
 
+
 ## What is it?
 
 This package contains SQL logging for GraphQL queries and mutations.  
@@ -55,7 +56,8 @@ use Marqant\SQLLog\Listeners\GetSQLExecutionInformation;
     ];
 ```
 
-###Example
+
+### Example
 
 Example of response data:
 
