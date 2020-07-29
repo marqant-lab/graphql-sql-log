@@ -15,47 +15,6 @@ Require the package through composer.
 $ compsoer require marqant-lab/sql-log
 ```
 
-After this please add to your project’s AppServiceProvider next:
-
-```php
-...
-use Illuminate\Support\Facades\DB;
-...
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        ...
-        if ($this->app->environment() !== 'production') {
-            // The environment is local
-            DB::enableQueryLog();
-        }
-    }
-```
-
-Add to your project’s EventServiceProvider next listener:
-
-```php
-...
-use Nuwave\Lighthouse\Events\ManipulateResult;
-use Marqant\SQLLog\Listeners\GetSQLExecutionInformation;
-...
-/**
-     * The event listener mappings for the application.
-     *
-     * @var array
-     */
-    protected $listen = [
-        ...
-        ManipulateResult::class => [
-            GetSQLExecutionInformation::class
-        ],
-    ];
-```
-
 
 ### Example
 
@@ -85,4 +44,28 @@ Example of response data:
         }
     ]
 }
+```
+
+## Tests
+
+To run tests, you first need to set up a sqlite database that we use to get snapshots of the database state. Run the
+ following command from within your project root to create the sqlite database.
+ 
+```shell script
+$ touch database/database.sqlite
+```
+
+If you want to execute package tests add this to the phpunit.xml
+                                     
+```xml
+        <testsuite name="GraphQLSQLLog">
+            <directory suffix="Test.php">./vendor/marqant-lab/graphql-sql-log/tests</directory>
+        </testsuite>
+```
+
+And after you can check it by executing:
+```shell script
+$ php artisan test --group=GraphQLSQLLog
+or
+$ phpunit --group=GraphQLSQLLog
 ```

@@ -1,5 +1,5 @@
 {
-    "name": "marqant-lab/sql-log",
+    "name": "marqant-lab/graphql-sql-log",
     "description": "Lighthouse GraphQL SQL Log(s).",
     "type": "package",
     "license": "MIT",
@@ -10,23 +10,23 @@
         }
     ],
     "require": {
+        "laravel/framework": "^7.0",
         "nuwave/lighthouse": "^4.14"
     },
     "autoload": {
         "psr-4": {
-            "Marqant\\SQLLog\\Tests\\": "tests/",
-            "Marqant\\SQLLog\\": "src/"
+            "Marqant\\GraphQLSQLLog\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Marqant\\SQLLog\\Tests\\": "tests/"
+            "Marqant\\GraphQLSQLLog\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Marqant\\SQLLog\\Providers\\SQLLogServiceProvider"
+                "Marqant\\GraphQLSQLLog\\Providers\\GraphQLSQLLogServiceProvider"
             ]
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Marqant\SQLLog\Listeners;
+namespace Marqant\GraphQLSQLLog\Listeners;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\App;
