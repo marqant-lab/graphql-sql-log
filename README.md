@@ -12,7 +12,7 @@ You will get all executed queries at response.
 Require the package through composer.
 
 ```shell script
-$ compsoer require marqant-lab/sql-log
+$ composer require marqant-lab/sql-log
 ```
 
 
